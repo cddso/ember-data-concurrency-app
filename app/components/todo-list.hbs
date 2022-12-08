@@ -1,0 +1,21 @@
+<h1>Todos</h1>
+
+<button type="button" {{on "click" (perform this.loadDataError)}}>Load Data Error</button>
+<button type="button" {{on "click" (perform this.loadData)}}>Load Data</button>
+
+{{#if this.todos}}
+  <table>
+    <tr>
+      <th>User Id</th>
+      <th>Title</th>
+      <th>Completed</th>
+    </tr>
+    {{#each this.todos as |todo|}}
+      <tr>
+        <td>{{todo.userId}}</td>
+        <td>{{todo.title}}</td>
+        <td>{{todo.completed}}</td>
+      </tr>
+    {{/each}}
+  </table>
+{{/if}}
